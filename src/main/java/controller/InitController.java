@@ -24,6 +24,7 @@ public class InitController {
         Queue q = new Queue();
         q.setName("Test Queue");
         q.setStatus("OPEN");
+        q.setCurrentToken(0); // 🔥 IMPORTANT FIX
         queueRepository.save(q);
 
         User u = new User();
