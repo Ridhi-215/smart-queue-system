@@ -1,7 +1,13 @@
 package com.smartqueue.controller;
 
-import com.smartqueue.model.*;
-import com.smartqueue.repository.*;
+import com.smartqueue.model.ServiceCenter;
+import com.smartqueue.model.Queue;
+import com.smartqueue.model.User;
+import com.smartqueue.repository.ServiceCenterRepository;
+import com.smartqueue.repository.QueueRepository;
+import com.smartqueue.repository.UserRepository;
+import org.springframework.stereotype.Controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
