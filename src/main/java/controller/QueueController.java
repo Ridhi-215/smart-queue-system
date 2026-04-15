@@ -29,7 +29,7 @@ public class QueueController {
     // =========================
     // JOIN QUEUE
     // =========================
-    @PostMapping("/join")
+    @GetMapping("/join")
     public Token joinQueue(@RequestParam Long userId, @RequestParam Long queueId) {
 
         User user = userRepository.findById(userId).orElseThrow();
@@ -67,7 +67,7 @@ public class QueueController {
     // =========================
     // NEXT TOKEN
     // =========================
-    @PostMapping("/next")
+    @GetMapping("/next")
     public String nextToken(@RequestParam Long queueId) {
 
         Queue queue = queueRepository.findById(queueId).orElseThrow();
