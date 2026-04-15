@@ -21,17 +21,23 @@ public class InitController {
     @GetMapping("/setup")
     public String setup() {
 
-        Queue q = new Queue();
-        q.setName("Test Queue");
-        q.setStatus("OPEN");
-        q.setCurrentToken(0); // 🔥 IMPORTANT FIX
-        queueRepository.save(q);
+        try {
 
-        User u = new User();
-        u.setName("Ridhi");
-        u.setEmail("ridhi@test.com");
-        userRepository.save(u);
+            Queue q = new Queue();
+            q.setName("Test Queue");
+            q.setStatus("OPEN");
+            q.setCurrentToken(0); // IMPORTANT
+            queueRepository.save(q);
 
-        return "Initialized!";
+            User u = new User();
+            u.setName("Ridhi");
+            u.setEmail("ridhi@test.com"); // IMPORTANT
+            userRepository.save(u);
+
+            return "Initialized Successfully!";
+
+        } catch (Exception e) {
+            return "Error: " + e.getMessage(); // 🔥 will show real issue
+        }
     }
 }
